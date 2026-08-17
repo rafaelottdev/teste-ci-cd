@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  ci:
+  setup:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,14 +19,45 @@ jobs:
           node-version: 22
           cache: npm
 
+  install:
+    runs-on: ubuntu-latest
+
+    needs: 
+      - setup
+
+    steps:
       - name: Install Dependencies
         run: npm ci
 
+  lint:
+    runs-on: ubuntu-latest
+
+    needs:
+      - setup
+      - install
+
+    steps:
       - name: Lint
         run: npm run lint
 
+  test:
+    runs-on: ubuntu-latest
+
+    needs:
+      - setup
+      - install
+
+    steps:
       - name: tests
         run: npm test
 
+  build:
+    runs-on: ubuntu-latest
+
+    needs:
+      - setup
+      - install
+
+    steps:
       - name: Build
         run: npm run build
