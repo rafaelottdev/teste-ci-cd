@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { sum } from "./sum";
+import { min } from "./min";
 
-describe("sum", () => {
+describe("min", () => {
   it("deve somar dois números", () => {
-    expect(sum(2, 3)).toBe(5);
+    expect(min(5, 3)).toBe(1);
   });
 });
