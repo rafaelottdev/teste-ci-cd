@@ -5,5 +5,5 @@ export default function Home() {
       <section>TESTE DE JOBS CI</section>
       <section>TESTE DE PROTEÇÃO DE BRANCH</section>
     </div>
-  );
+  )
 }
