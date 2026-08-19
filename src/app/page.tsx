@@ -5,6 +5,7 @@ export default function Home() {
       <section>TESTE DE JOBS CI</section>
       <section>TESTE DE PROTEÇÃO DE BRANCH</section>
       <section>BRANCH PROTEGIDA</section>
+      <section>OUTRO TESTE</section>
     </div>
   );
 }
